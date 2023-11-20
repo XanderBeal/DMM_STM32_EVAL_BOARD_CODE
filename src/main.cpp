@@ -39,7 +39,7 @@ void setup() {
   display.clearDisplay();
 
   display.clearDisplay();
-
+  
   display.setTextSize(3);      // Normal 1:1 pixel scale
   display.setTextColor(WHITE); // Draw white text
   display.setCursor(0, 0);     // Start at top-left corner
@@ -52,15 +52,17 @@ void setup() {
 
 void loop() {
 
-  
-
-
-  //LED blink
-  
-  //delay(400);
   displayADC();
-
+  
 }
+
+
+
+
+
+
+
+
 
 
 void displayADC(void) 
@@ -69,15 +71,10 @@ void displayADC(void)
   for(int x = 0; x < 5000; x++) 
   {
     val += analogRead(sensorPin);
-
   }
   val = val / 5000.0;
 
-
   display.clearDisplay();
-  //digitalValue = analogRead(sensorPin);
-
-  
 
   double Vin = ((val / 65535.00) * 3.3266) + 0.00555;
 
@@ -93,21 +90,12 @@ void displayADC(void)
   // for (int i = 1; i < 5 ; i++)
   // {
   //    display.writeLine(cstr[i - 1]);
-
-  //   display.setCursor(i * 23, 0);
+  //    display.setCursor(i * 23, 0);
   // }
   display.display();
   //Serial.print("\n");
   //delay(100);
-
-
-
 }
-
-
-
-
-
 
 
 void displayTest(void) 
