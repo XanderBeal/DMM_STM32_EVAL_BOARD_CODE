@@ -1,4 +1,4 @@
-#pragma once
+
 #include <SPI.h>
 #include <Arduino.h>
 #include <Adafruit_GFX.h>
