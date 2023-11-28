@@ -1,4 +1,4 @@
-#pragma once
+
 #include <SPI.h>
 #include <Arduino.h>
 #include <Adafruit_GFX.h>
@@ -7,12 +7,9 @@
 #include <Wire.h>
 
 //import files
-#include "measure.cpp"
-#include "cal.cpp"
-#include "screenDisplay.cpp"
-
-
-//func declarations
+#include "measure.hpp"
+#include "cal.hpp"
+#include "screenDisplay.hpp"
 
 
 //variable declarations
@@ -23,7 +20,7 @@ double digitalValue = 0.00;// variable to store the value coming from the sensor
 //One time executed code
 void setup() {
 
-  bootScreen(); //from display.cpp
+  //bootScreen(); //from display.cpp
 
   analogReadResolution(16); //set bit count of ADC
 
@@ -64,7 +61,7 @@ void loop() {
   */
 
 
-  displayADC();
+  //displayADC();
   
 }
 

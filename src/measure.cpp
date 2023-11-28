@@ -7,12 +7,9 @@
 //I2C setup
 #include <Wire.h>
 
-#include "screenDisplay.cpp"
+#include "screenDisplay.hpp"
 
-void displayADC(void);
-void voltsMeas(void);
-void ampsMeas(void);
-void ohmsMeas(void); //continuity included?
+extern Adafruit_SSD1306 display;
 
 //variable declarations
 int sensorPin = A0;  // input pin for the potentiometer

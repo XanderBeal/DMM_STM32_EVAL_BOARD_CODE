@@ -7,8 +7,6 @@
 //I2C setup
 #include <Wire.h>
 
-void cal(void);
-void rel(void);
 
 void cal(void)
 {
