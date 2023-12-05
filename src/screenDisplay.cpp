@@ -20,13 +20,23 @@ void bootScreen(void)
     //display setup      
     if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) 
     { 
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;); // Don't proceed, loop forever
+    //Serial.println(F("SSD1306 allocation failed"));
+    
+    
+    for(;;){
+        digitalWrite(PA15, HIGH);
+
+        delay(30);
+
+        digitalWrite(PA15, LOW);
+
+        delay(30);
+    } // Don't proceed, loop forever
      }
      //displayTest();
-    Serial.begin(9600);
+    //Serial.begin(9600);
     display.display();
-    delay(200); 
+    //delay(200); 
     display.clearDisplay();
 
     display.clearDisplay();
@@ -37,27 +47,7 @@ void bootScreen(void)
     display.cp437(true);
 
 
-    pinMode(LED_BUILTIN, OUTPUT);
+
    
-    display.display();
-    delay(200); 
-    display.clearDisplay();
-    ////display.write(48);
-     display.display();
-    delay(200); 
-    display.clearDisplay();
-
-    display.clearDisplay();
-
-    display.setTextSize(3);      // Normal 1:1 pixel scale
-    display.setTextColor(WHITE); // Draw white text
-    display.setCursor(64, 32);     // Start at top-left corner
-    display.cp437(true);         // Use full 256 char 'Code Page 437' font
-
-    display.write("A");
-
-    display.setCursor(64, 0); 
-     display.write(16);
-
-     display.display();
+    
 }
