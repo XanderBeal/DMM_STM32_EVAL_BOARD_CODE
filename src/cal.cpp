@@ -7,13 +7,12 @@
 //I2C setup
 #include <Wire.h>
 
+double val2 = 0;
 
-void cal(void)
+double cal(void)
 {
+    val2 = 0.00;
 
+    return(val2);
 }
 
-void rel(void)
-{
-
-}

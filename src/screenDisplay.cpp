@@ -26,11 +26,11 @@ void bootScreen(void)
     for(;;){
         digitalWrite(PA15, HIGH);
 
-        delay(30);
+        delay(1000);
 
         digitalWrite(PA15, LOW);
 
-        delay(30);
+        delay(100);
     } // Don't proceed, loop forever
      }
      //displayTest();
