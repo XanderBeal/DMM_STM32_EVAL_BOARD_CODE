@@ -16,6 +16,8 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <stm32f3xx_hal_rcc.h>
+#include <stm32f3xx_hal_adc.h>
+
 //I2C setup
 #include <Wire.h>
 
@@ -36,6 +38,13 @@ int configTemp = 0; //tells displayADC which mode is used
 int config2Temp = 0; //tells displayADC which range is used
 double offset = 0; //offset value for measurement cal
 
+
+
+
+
+
+
+
 //One time executed code
 void setup() {
   
@@ -49,6 +58,7 @@ void setup() {
 
   //from display.cpp
   analogReadResolution(16); //set bit count of ADC
+  
 
   bootScreen();
   //press volts for cal
@@ -97,8 +107,6 @@ void loop() {
 
   //for faster run time and refresh, setup range and only change and run code for it if range changes
   // i.e. seperate range and measurement function calling
-  
-
 
 }
 
@@ -135,7 +143,7 @@ void LedBlink()
  void InteruptAmps()
 {
   configTemp = 2; //sets measure function 
-  config2Temp = 1; //sets starting range for autoranging
+  config2Temp = 3; //sets starting range for autoranging
 }
  void InteruptOhms()
 {
